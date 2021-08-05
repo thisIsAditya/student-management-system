@@ -39,7 +39,7 @@
                                     }
                                     ?>
                                     </select>
-                                    <div id="stdHelp" class="form-text">Select your Standardr</div>
+                                    <div id="stdHelp" class="form-text">Select your Standard</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="rollno" class="form-label">Roll number</label>
