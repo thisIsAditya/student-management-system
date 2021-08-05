@@ -9,7 +9,9 @@
      //LOGIN SESSION CHECK STARTS
      if(isset($_SESSION['standard']) && isset($_SESSION['rollno'])){
         header('location:studentProfile.php');
-     }
+     }elseif(isset($_SESSION['adminEmail'])){
+        header('location:adminIndex.php');
+    }
      //LOGIN SESSION CHECK ENDS
      include_once($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/src/dbconn.php");
      $sql = "SELECT `standard_id`,`standard` FROM `standard`";

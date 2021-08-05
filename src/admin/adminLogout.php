@@ -1,0 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION['adminEmail'])){
+    session_destroy();
+    header('location:/student-management-system/public/adminLogin.php');
+}
+else{
+    header('location:/student-management-system/public/adminLogin.php');
+}
+?>

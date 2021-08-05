@@ -7,7 +7,10 @@
 <?php
     include($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/assets/components/navbar.inc.php");
     //LOGIN SESSION CHECK STARTS
-    if(isset($_SESSION['adminEmail'])){
+    if(isset($_SESSION['standard']) && isset($_SESSION['rollno'])){
+    header('location:studentProfile.php');
+    }
+    elseif(isset($_SESSION['adminEmail'])){
     header('location:adminIndex.php');
     }
     //LOGIN SESSION CHECK ENDS

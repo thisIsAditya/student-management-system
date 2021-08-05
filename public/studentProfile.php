@@ -9,6 +9,9 @@
      if(!(isset($_SESSION['standard']) && isset($_SESSION['rollno']))){
         header('location:index.php');
      }
+     elseif(isset($_SESSION['adminEmail'])){
+        header('location:adminIndex.php');
+    }
      include_once($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/src/dbconn.php");
      $sql = "SELECT * FROM `student` JOIN `standard` ON `student`.`standard_id` = `standard`.`standard_id` WHERE `standard`.`standard`='{$_SESSION['standard']}' AND `student`.`rollno`='{$_SESSION['rollno']}' ";
     ?>

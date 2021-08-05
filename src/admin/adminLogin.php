@@ -1,6 +1,6 @@
 <?php
+session_start();
 $email = $_POST['email'];
-
 include_once($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/src/dbconn.php");
 $sql = "SELECT `admin_password` from `admin` WHERE `admin_email`= '$email'";
 $result=$conn->query($sql);
