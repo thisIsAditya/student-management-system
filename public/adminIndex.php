@@ -35,8 +35,8 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
-                                            <div class="card bg-primary" style="width: 18rem;">
+                                        <a href="adminStudent.php">
+                                            <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Students</p>
                                                 </div>
@@ -50,7 +50,7 @@
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
                                         <a href="addStudent.php">
-                                            <div class="card bg-primary" style="width: 18rem;">
+                                            <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Courses</p>
                                                 </div>
@@ -64,7 +64,7 @@
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
                                         <a href="addStudent.php">
-                                            <div class="card bg-primary" style="width: 18rem;">
+                                            <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Exams</p>
                                                 </div>
@@ -78,7 +78,7 @@
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
                                         <a href="addStudent.php">
-                                            <div class="card bg-primary" style="width: 18rem;">
+                                            <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Results</p>
                                                 </div>
@@ -92,7 +92,7 @@
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
                                         <a href="addStudent.php">
-                                            <div class="card bg-primary" style="width: 18rem;">
+                                            <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Change Password</p>
                                                 </div>
@@ -105,8 +105,8 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
-                                            <div class="card bg-danger" style="width: 18rem;">
+                                        <a href="../src/admin/adminLogout.php">
+                                            <div class="card bg-danger" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Logout</p>
                                                 </div>
