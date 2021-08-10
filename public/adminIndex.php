@@ -49,7 +49,7 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
+                                        <a href="adminCourse.php">
                                             <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Courses</p>
@@ -63,7 +63,7 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
+                                        <a href="adminExam.php">
                                             <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Exams</p>
@@ -77,7 +77,7 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
+                                        <a href="adminResult.php">
                                             <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Results</p>
@@ -91,7 +91,7 @@
                                     <!-- Cards-->
                                     <div class="col-lg-4">
                                         <div class="p-1 adminCards">
-                                        <a href="addStudent.php">
+                                        <a href="adminChangePassword.php">
                                             <div class="card bg-primary" style="width: 100%;">
                                                 <div class="card-body">
                                                     <p class="h4 text-light text-center fw-bold">Change Password</p>

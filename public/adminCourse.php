@@ -1,7 +1,7 @@
 <?php
     include($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/assets/components/header.inc.php");
 ?>
-    <title>Students | Student Management System</title>
+    <title>Course | Student Management System</title>
 </head>
 <body>
 <?php 
@@ -24,12 +24,33 @@
                         <div class="card-header text-center">
                             Courses
                         </div>
-                        <div class="card-body">
-                            <div>
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                    
-                                </form>
-                            </div>
+                        <div class="card-body container-fluid">
+                            <!-- Top Form -->
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <label for="standard">Std</label>
+                                        <select name="standard">
+                                            <?php
+                                            $sql = "SELECT `standard`.`standard_id`,`student`.`standard` FROM `student` JOIN `standard` ON `standard`.`standard`=`student`.`standard`";
+                                            $result = $conn->query($sql);
+                                            if($result->num_rows > 0){
+                                                while($row=$result->fetch_assoc()){
+                                            ?>
+                                                    <option value="<?= $row['standard_id'] ?>"><?= $row['standard'] ?></option>
+                                            <?php
+                                                }
+                                            }
+                                            else{
+                                            ?>
+                                                <option value="0">No data available</option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>  
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

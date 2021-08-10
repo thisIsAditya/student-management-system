@@ -8,3 +8,4 @@
     <!-- Bootstrap Integration starts -->
     <link rel="stylesheet" href="../assets/bootstrap-5/css/bootstrap.min.css">
     <script src="../assets/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../assets/fa4.7/css/font-awesome.min.css">

@@ -1,7 +1,7 @@
 <?php
     include($_SERVER['DOCUMENT_ROOT'] . "/student-management-system/assets/components/header.inc.php");
 ?>
-    <title>Students | Student Management System</title>
+    <title>Result | Student Management System</title>
 </head>
 <body>
 <?php 
