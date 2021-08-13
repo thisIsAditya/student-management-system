@@ -26,18 +26,19 @@
                         <div class="card-header text-center">
                             Add Student
                         </div>
-                        <div class="card-body container-fluid">
-                            <div class="row justify-content-center">
-                                <div class="col-3">
-                                    <div class="m-md-3 p-2">
-                                        <img src="<?php if(isset($row['admin_img'])){echo $row['admin_img'];} ?>" class="img-thumbnail rounded-circle" alt="Profile Picture">
+                        <form action="../src/admin/adminAddStudent.php" method="POST" enctype="multipart/form-data">
+                        <!-- To-do : Add form validation for 'rollno', name and email -->
+                            <div class="card-body container-fluid">
+                                <div class="row justify-content-center" style="height:20rem; overflow:auto;">
+                                    <div class="col-3">
+                                        <div class="my-md-2 p-2">
+                                            <img src="<?php if(isset($row['admin_img'])){echo $row['admin_img'];} ?>" class="img-thumbnail rounded-circle" alt="Profile Picture">
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="col-12">
-                                    <div class="m-2 p-2">
-                                    <form action="../src/admin/adminAddStudent.php" method="POST" enctype="multipart/form-data">
-                                    <!-- To-do : Add form validation for 'rollno', name and email -->
+                                    
+                                    <div class="col-12">
+                                        <div class="m-md-2 p-md-2">
+                                        
                                         <div class="form-group mb-3">
                                             <label for="standard" class="form-label">Std</label>
                                             <select name="standard" class=" form-control">
@@ -79,47 +80,44 @@
                                             <label for="img">Profile Image</label>
                                             <input type="file" class="form-control-file" name="img">
                                         </div>
-
-                                        <div class="container-fluid my-3">
-                                                <div class="row align-items-center">
-                                                    <div class="col-9">
-                                                        <div class="p-1">
-                                                            <button type="submit" class="btn btn-danger" name="addStdSubmitBtn">Submit</button>
-                                                            <a href="adminStudent.php" class="btn btn-secondary">Close</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <div class="p-1">
-                                                            <?php
-                                                                if($_GET['return'] == '\'fail\''){
-                                                            ?>
-                                                                    <span class="text-light bg-danger p-2 rounded-pill ">Cannot Add Student</span>
-                                                            <?php
-                                                                }
-                                                                elseif($_GET['return'] == '\'success\''){
-                                                            ?>
-                                                                    <span class="text-light bg-success p-2 rounded-pill">Student Added</span>
-                                                            <?php
-                                                                    // header('location:adminStudent.php');
-                                                                }
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                         </div>
-                                    </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="card-footer">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6 ">
+                                            <div class="p-1">
+                                                <button type="submit" class="btn btn-danger" name="addStdSubmitBtn">Submit</button>
+                                                <a href="adminStudent.php" class="btn btn-secondary">Close</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 mt-md-0 mt-3 text-md-end">
+                                            <div class="p-1">
+                                                <?php
+                                                    if($_GET['return'] == '\'fail\''){
+                                                ?>
+                                                        <span class="text-light bg-danger p-md-3 p-2 rounded-pill ">Cannot Add Student</span>
+                                                <?php
+                                                    }
+                                                    elseif($_GET['return'] == '\'success\''){
+                                                ?>
+                                                        <span class="text-light bg-success p-md-3 p-2 rounded-pill">Student Added</span>
+                                                <?php
+                                                        // header('location:adminStudent.php');
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 </body>
 </html>
