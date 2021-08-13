@@ -1,4 +1,13 @@
 <?php
+session_start();
+//LOGIN SESSION CHECK STARTS
+if(isset($_SESSION['standard']) && isset($_SESSION['rollno'])){
+    header('location:studentProfile.php');
+}
+elseif(!(isset($_SESSION['adminEmail']))){
+header('location:adminLogin.php');
+}
+//LOGIN SESSION CHECK ENDS
 $email = $_POST['email'];
 $key=$_POST['key'];
 $pass = password_hash($_POST['pass'],PASSWORD_DEFAULT);

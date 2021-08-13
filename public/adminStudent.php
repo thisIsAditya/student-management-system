@@ -28,7 +28,7 @@
                             <!-- Top Form -->
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form" method="POST">
                             <div class="row">
-                                <div class="col-md-6 d-flex align-items-center">
+                                <div class="col-6 d-flex align-items-center">
                                     <div class="d-inline p-1">
                                         <label for="standard" class="form-label">Std</label>
                                         <select name="standard" class="ms-3">
@@ -62,7 +62,7 @@
                                         </select>                                    
                                     </div>
                                 </div> 
-                                <div class="col-md-6 d-flex justify-content-end">
+                                <div class="col-6 d-flex justify-content-end">
                                     <div class="p-1">
                                             <input type="submit" class="btn btn-success" value="Search" name="search">
                                     </div>
@@ -120,6 +120,7 @@
                 </div>
             </div>
         </div>
+        <a href="adminAddStudent.php" class="btn btn-primary position-absolute bottom-0 end-0 mb-5 me-5"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Student</a>
     </div>
 </body>
 </html>
