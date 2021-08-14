@@ -99,7 +99,7 @@
                                                                 <td><?= $row['standard'] ?></td>
                                                                 <td><?= $row['name'] ?></td>
                                                                 <td><?= $row['email'] ?></td>
-                                                                <td></td>
+                                                                <td><a href="adminEditStudent.php?id=<?= $row['stdn_id'] ?>"<i class="fa fa-pencil" aria-hidden="true"></i></td>
                                                                 <td><a href="../src/admin/adminDelStudent.php?id=<?= $row['stdn_id'] ?>"<i class="fa fa-trash" aria-hidden="true"></i></td>
                                                             </tr>
                                                     <?php
