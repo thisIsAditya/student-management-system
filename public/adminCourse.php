@@ -96,7 +96,7 @@
                                                                 <th scope="row"><?= $row['course_id'] ?></th>
                                                                 <td><?= $row['course_name'] ?></td>
                                                                 <td><?= $row['standard'] ?></td>
-                                                                <td><a href="adminEditCourse.php?id=<?= $row['stdn_id'] ?>"<i class="fa fa-pencil" aria-hidden="true"></i></td>
+                                                                <td><a href="adminEditCourse.php?id=<?= $row['course_id'] ?>"<i class="fa fa-pencil" aria-hidden="true"></i></td>
                                                                 <td><a href="../src/admin/adminDelCourse.php?id=<?= $row['course_id'] ?>"<i class="fa fa-trash" aria-hidden="true"></i></td>
                                                             </tr>
                                                     <?php
@@ -106,12 +106,15 @@
                                                         echo "<tr><td colspan=\"5\">No Data Found<td></tr>";
                                                     }
                                                     ?>
-                                            </tbody>                                               
+                                                </tbody>                                               
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="adminAddCourse.php" class="btn btn-primary float-end"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Course</a>                        
                         </div>
                     </div>
                 </div>
