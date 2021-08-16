@@ -24,12 +24,98 @@
                         <div class="card-header text-center">
                             Exams
                         </div>
-                        <div class="card-body">
-                            <div>
-                                <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                                    
-                                </form>
-                            </div>
+                        <div class="card-body container-fluid">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form" method="POST">
+                                <div class="row">
+                                    <div class="col-6 d-flex align-items-center">
+                                        <div class="d-inline p-1">
+                                            <label for="standard" class="form-label">Std</label>
+                                            <select name="standard" class="ms-3">
+                                                <?php
+                                                $sql="SELECT * FROM `standard`";
+                                                $result = $conn->query($sql);
+                                                if($result->num_rows > 0){
+                                                ?>
+                                                    <option value="0">All</option>
+                                                <?php
+                                                    while($row=$result->fetch_assoc()){
+                                                ?>
+                                                        <option value="<?= $row['standard_id'] ?>"
+                                                            <?php 
+                                                            if(isset($_POST['search'])){
+                                                                if($_POST['standard']==$row['standard']){
+                                                                    echo "selected";
+                                                                }
+                                                            } 
+                                                            ?>
+                                                        ><?= $row['standard'] ?></option>
+                                                <?php
+                                                    }
+                                                }
+                                                else{
+                                                ?>
+                                                    <option value="-1">No data available</option>
+                                                <?php
+                                                }
+                                                ?>
+                                            </select>                                    
+                                        </div>
+                                    </div> 
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <div class="p-1">
+                                                <input type="submit" class="btn btn-success" value="Search" name="search">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="p-1" style="overflow:auto;height:15rem;">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Exam ID</th>
+                                                        <th scope="col">Exam Name</th>
+                                                        <th scope="col">Standard</th>
+                                                        <th scope="col">Edit</th>
+                                                        <th scope="col">Delete</th>
+                                                    </tr>
+                                                </thead>                                            
+                                                <tbody>
+                                                    <?php
+                                                    if(isset($_POST['search']) && $_POST['standard'] != 0){
+                                                        $sql="SELECT * FROM `standard-exm` JOIN `standard` ON `standard-exm`.`standard_id` = `standard`.`standard_id` JOIN `exams` ON `standard-exm`.`exam_id` = `exams`.`exam_id` WHERE `standard_id` = {&_POST['standard']} ";                                                    
+                                                    }
+                                                    else{
+                                                        $sql="SELECT * FROM `standard-exm` JOIN `standard` ON `standard-exm`.`standard_id` = `standard`.`standard_id` JOIN `exams` ON `standard-exm`.`exam_id` = `exams`.`exam_id`";                                                    
+                                                    }
+                                                    $result = $conn->query($sql);
+                                                    if($result->num_rows >0){
+                                                        while($row=$result->fetch_assoc()){
+                                                    ?>
+                                                            <tr>
+                                                                <th scope="row"><?= $row['exam_id'] ?></th>
+                                                                <td><?= $row['exam_name'] ?></td>
+                                                                <td><?= $row['standard'] ?></td>
+                                                                <td><a href="adminEditExam.php?id=<?= $row['course_id'] ?>"<i class="fa fa-pencil" aria-hidden="true"></i></td>
+                                                                <td><a href="../src/admin/adminDelExam.php?id=<?= $row['course_id'] ?>"<i class="fa fa-trash" aria-hidden="true"></i></td>
+                                                            </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    else{
+                                                        echo "<tr><td colspan=\"5\">No Data Found<td></tr>";
+                                                    }
+                                                    ?>
+                                                </tbody>                                               
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="adminAddExam.php" class="btn btn-primary float-end mx-1"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Courses</a>
+                            <a href="adminEditExam.php" class="btn btn-primary float-end mx-1"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit Courses</a>                        
                         </div>
                     </div>
                 </div>
